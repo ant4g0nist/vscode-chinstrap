@@ -1,0 +1,184 @@
+{
+  "name": "chinstrap",
+  "displayName": "chinstrap",
+  "publisher": "ant4g0nist",
+  "description": "Chinstrap makes developers' lives easier by providing support for multiple contract compilations, tests, and origination on public and private Tezos networks.",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ant4g0nist/vscode-chinstrap"
+  },
+  "license": "MIT",
+  "preview": true,
+  "icon": "img/chinstrap.png",
+  "categories": [
+    "Extension Packs",
+    "Programming Languages"
+  ],
+  "keywords": [
+    "blockchain",
+    "smartpy",
+    "chinstrap",
+    "ligo",
+    "tezos",
+    "flextesa"
+  ],
+  "activationEvents": [
+    "onView:contractProvider",
+    "onView:fileExplorer",
+    "onCommand:chinstrap.init",
+    "onCommand:chinstrap.initWithSamples",
+    "onCommand:chinstrap.compile",
+    "onCommand:chinstrap.sandbox",
+    "onCommand:chinstrap.deploy",
+    "onCommand:chinstrap.test"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "chinstrap.init",
+        "title": "Chinstrap Init",
+        "group": "chinstrap"
+      },
+      {
+        "command": "chinstrap.initWithSamples",
+        "title": "Chinstrap initialise with samples",
+        "group": "chinstrap"
+      },
+      {
+        "command": "chinstrap.compile",
+        "title": "Chinstrap Compile",
+        "group": "chinstrap"
+      },
+      {
+        "command": "chinstrap.startSandbox",
+        "title": "Chinstrap Start Sandbox",
+        "group": "chinstrap"
+      },
+      {
+        "command": "chinstrap.stopSandbox",
+        "title": "Chinstrap Stop Sandbox",
+        "group": "chinstrap"
+      },
+      {
+        "command": "chinstrap.deploy",
+        "title": "Chinstrap Deploy",
+        "group": "chinstrap"
+      },
+      {
+        "command": "chinstrap.test",
+        "title": "Chinstrap Test",
+        "group": "chinstrap"
+      },
+      {
+				"command": "fileExplorer.openFile",
+				"title": "Open File",
+        "group": "chinstrap"
+			},
+      {
+        "command": "chinstrap.views.contracts.refreshExplorer",
+        "title": "Refresh Contracts",
+        "category": "chinstrap",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "chinstrap.compileAllContracts",
+        "title": "Compile all Contracts",
+        "category": "chinstrap",
+        "icon": "$(run-all)"
+      },
+      {
+        "command": "chinstrap.views.tests.refreshExplorer",
+        "title": "Refresh Tests",
+        "category": "chinstrap",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "chinstrap.runAllTests",
+        "title": "Run all tests",
+        "category": "chinstrap",
+        "icon": "$(run-all)"
+      },
+      {
+        "command": "chinstrap.views.originations.refreshExplorer",
+        "title": "Refresh Originations",
+        "category": "chinstrap",
+        "icon": "$(refresh)"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "contract-provider",
+          "title": "Contract Explorer",
+          "icon": "img/icon.png"
+        }
+      ]
+    },
+    "views": {
+      "contract-provider": [
+        {
+          "id": "contractProvider",
+          "name": "Contract Explorer",
+          "icon": "img/icon.png",
+          "contextualTitle": "Contract Explorer"
+        },
+        {
+          "id": "testProvider",
+          "name": "Test Explorer",
+          "icon": "img/icon.png",
+          "contextualTitle": "Test Explorer"
+        },
+        {
+          "id": "originationProvider",
+          "name": "Origination Explorer",
+          "icon": "img/icon.png",
+          "contextualTitle": "Origination Explorer"
+        }
+      ],
+      "explorer": [
+        {
+          "id": "contracts",
+          "name": "Chinstrap contracts"
+        },
+        {
+					"id": "fileExplorer",
+					"name": "File Explorer"
+				}
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "yarn run compile && yarn run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.2.0",
+    "@types/js-yaml": "^4.0.5",
+    "@types/mkdirp": "^1.0.2",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "16.x",
+    "@types/rimraf": "^3.0.2",
+    "@types/vscode": "^1.70.0",
+    "@typescript-eslint/eslint-plugin": "^5.31.0",
+    "@typescript-eslint/parser": "^5.31.0",
+    "@vscode/test-electron": "^2.1.5",
+    "eslint": "^8.20.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.0.0",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "mkdirp": "^1.0.4",
+    "rimraf": "^3.0.2"
+  }
+}
