@@ -43,8 +43,8 @@ export async function activate(context: vscode.ExtensionContext) {
     originationWatcher.onDidCreate(_ => originationProvider?.refresh());
     originationWatcher.onDidDelete(_ => originationProvider?.refresh());
 
-	vscode.commands.registerCommand('chinstrap.views.contracts.refresh', (_) => originationProvider.refresh());
-	vscode.commands.registerCommand('chinstrap.views.tests.refresh', (_) => originationProvider.refresh());
+	vscode.commands.registerCommand('chinstrap.views.contracts.refresh', (_) => contractProvider.refresh());
+	vscode.commands.registerCommand('chinstrap.views.tests.refresh', (_) => testProvider.refresh());
 	vscode.commands.registerCommand('chinstrap.originations.tests.refresh', (_) => originationProvider.refresh());
 
 	new FileExplorer(context);
@@ -54,7 +54,7 @@ export async function activate(context: vscode.ExtensionContext) {
 	});
 
 	const initWithSamples = vscode.commands.registerCommand('chinstrap.initWithSamples', async () => {
-		await commands.init();
+		await commands.initWithSamples();
 	});
 
 	const compile = vscode.commands.registerCommand('chinstrap.compile', async (path: any) => {

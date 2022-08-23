@@ -3,7 +3,7 @@
   "displayName": "chinstrap",
   "publisher": "ant4g0nist",
   "description": "Chinstrap makes developers' lives easier by providing support for multiple contract compilations, tests, and origination on public and private Tezos networks.",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "engines": {
     "vscode": "^1.70.0"
   },
