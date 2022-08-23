@@ -24,11 +24,11 @@ Chinstrap makes developers' lives easier by providing support for multiple contr
 
 ### Chinstrap vscode extension
 
-![views](./img/views.png)
+![views](https://raw.githubusercontent.com/ant4g0nist/vscode-chinstrap/main/img/views.png)
 
 #### Commands
 
-![commands](./img/commands.png)
+![commands](https://raw.githubusercontent.com/ant4g0nist/vscode-chinstrap/main/img/commands.png)
 
 ### Features
 
